@@ -13,6 +13,8 @@
             line-height: 1.5;
             font-size: 16px;
             color: #000;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
         }
         #stage {
             width: 100%;
@@ -33,9 +35,11 @@
     <h1>gesture demo - press</h1>
     <div id="stage">
         <div id="plane"></div>
-    </div>    
+    </div>
     <script type="text/javascript" src="../source/gesture.js"></script>
     <script type="text/javascript">
+        document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);
+        document.addEventListener('select', function (e) {e.preventDefault();}, false);
         var degree = 0;
         var target = document.getElementById('plane');
         enableGestureEvents(target);

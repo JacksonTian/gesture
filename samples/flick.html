@@ -39,6 +39,7 @@
     </div>    
     <script type="text/javascript" src="../source/gesture.js"></script>
     <script type="text/javascript">
+        document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);
         var pos = true;
         var target = document.getElementById('plane');
         enableGestureEvents(target);

@@ -38,14 +38,12 @@
     </div>
     <script type="text/javascript" src="../source/gesture.js"></script>
     <script type="text/javascript">
+        document.addEventListener('touchmove', function (e) {e.preventDefault();}, false);
         var base;
         var target = document.getElementById('plane');
         enableGestureEvents(target);
         target.addEventListener('panstart', function(e) {
-            base = parseInt(target.style.left);
-            if(isNaN(base)) {
-                base = 0;
-            }
+            base = parseInt(target.style.left) || 0;
         }, false);
         target.addEventListener('panend', function(e) {
             target.style.background = '#39f';
@@ -55,13 +53,8 @@
             e.stopPropagation();
             target.style.background = '#f60';
             var pos = base + e.displacementX;
-            if(pos > 220) {
-                target.style.left = '220px';
-            } else if(pos < 0) {
-                target.style.left = '0px';
-            } else {
-                target.style.left = pos + 'px';
-            }
+            pos = Math.max(Math.min(220, pos), 0);
+            target.style.left = pos + 'px';
         }, false);
     </script>
 </body>

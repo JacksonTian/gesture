@@ -1,17 +1,15 @@
-Gesture
+gesture
 =======
-A JavaScript library to support touch (especially multi-touch) gestures on touch screen devices.
 
+触屏手势库，基于Winter和Zepto.js完成
 
-Current supported Gestures:
-
-tap
-doubletap
-press
-	pressend
-flick
-pan
-	panstart
-	panend
-dualtouch
-	dualtouchstart
+- tap
+- doubletap
+- press
+- pressend
+- flick
+- pan
+- panstart
+- panend
+- dualtouch
+- dualtouchstart
